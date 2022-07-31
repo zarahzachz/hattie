@@ -1,5 +1,11 @@
+const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
+const { pairedShortcode } = require("@11ty/eleventy-plugin-syntaxhighlight");
 
 module.exports = function(config) {
+  config.addPlugin(syntaxHighlight);
+  config.addPassthroughCopy("./src/css");
+
+  // Creating collections for navigation
   config.addCollection('ingredients', collection => {
     return collection
       .getFilteredByGlob('./src/ingredients/*.md')
@@ -12,6 +18,8 @@ module.exports = function(config) {
       .sort((a, b) => a.data.title.toLowerCase().localeCompare(b.data.title.toLowerCase()))
       .sort((a, b) => Number(b.data.overview) - Number(a.data.overview))
   });
+
+  // Creating collections for overview pages
   config.addCollection('overviewIngredients', collection => {
     return collection
       .getFilteredByGlob('./src/ingredients/*.md')
@@ -24,6 +32,12 @@ module.exports = function(config) {
       .filter(el => el.data.overview === false)
       .sort((a, b) => a.data.title.toLowerCase().localeCompare(b.data.title.toLowerCase()))
   });
+
+  // Add code preview/markup example using a shortcode
+  config.addPairedShortcode('example', (content, lang = 'html') => {
+    return `<div class="example"><div class="preview">${content}</div><div class="markup">${pairedShortcode(content, lang)}</div></div>`
+  });
+
   return {
     markdownTemplateEngine: 'njk',
     dataTemplateEngine: 'njk',
