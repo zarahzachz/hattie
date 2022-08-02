@@ -19,6 +19,12 @@ module.exports = function(config) {
       .sort((a, b) => a.data.title.toLowerCase().localeCompare(b.data.title.toLowerCase()))
       .sort((a, b) => Number(b.data.overview) - Number(a.data.overview))
   });
+  config.addCollection('gettingStarted', collection => {
+    return collection
+      .getFilteredByGlob('./src/getting-started/*.md')
+      .sort((a, b) => a.data.title.toLowerCase().localeCompare(b.data.title.toLowerCase()))
+      .sort((a, b) => Number(b.data.overview) - Number(a.data.overview))
+  });
 
   // Creating collections for overview pages
   config.addCollection('overviewIngredients', collection => {
