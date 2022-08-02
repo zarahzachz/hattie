@@ -1,11 +1,24 @@
-{% extends "layouts/base.html" %} {% set overviewItems = page.collection %} {%
-block content %}
+{% extends "layouts/base.html" %} 
+
+{% block content %}
 <article>
   <h1>{{ title }}</h1>
-  {{ content | safe }} {% for items in overViewItems %}
+
   <div>
-    <h3>{{ item.data.title }}</h3>
+    {{ content | safe }} 
   </div>
-  {% endfor %}
+
+  {% if collections[group].length > 0 %}
+    <hr>
+    <div>
+    {% for item in collections[group] %}
+      <article>
+        <h3>{{ item.data.title }}</h3>
+        <p>{{ item.data.about }}</p>
+        <a href="{{ item.url }}">Learn more about {{ item.data.title }}</a>
+      </article>
+    {% endfor %}
+    </div>
+  {% endif %}
 </article>
 {% endblock %}

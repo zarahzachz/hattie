@@ -1,14 +1,7 @@
 ---
 title: Accordion
+about: An accordion is a series of vertically stacked panels of expandable and collapsible content.
 ---
-
-I'm an accordion.
-
-{% include "recipes/accordion/accordion.html" %}
-
-```html
-{% include "recipes/accordion/accordion.html" %}
-```
 
 {% example %}
 {% include "recipes/accordion/accordion.html" %}

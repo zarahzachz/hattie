@@ -1,17 +1,16 @@
 <ul>
-  {% for item in navListItems %} {% if item.data.overview %} {% set title =
-  "Overview" %} {% else %} {% set title = item.data.title %} {% endif %}
+{% for item in navListItems %}   
+  {% if item.data.overview %} 
+    {% set title = "Overview" %} 
+  {% else %} 
+    {% set title = item.data.title %} 
+  {% endif %}
   <li>
-    <a
-      href="{{ item.url }}"
-      {{
-      helpers.getLinkActiveState(item.url,
-      page.url)
-      |
-      safe
-      }}
-      >{{ title }}</a
+    <a href="{{ item.url }}"
+      {{ helpers.getLinkActiveState(item.url, page.url) | safe }}
     >
+      {{ title }}
+    </a>
   </li>
-  {% endfor %}
+{% endfor %}
 </ul>
