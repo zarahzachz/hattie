@@ -1,5 +1,6 @@
 const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 const { pairedShortcode } = require("@11ty/eleventy-plugin-syntaxhighlight");
+const { DateTime } = require("luxon");
 
 module.exports = function(config) {
   config.addPlugin(syntaxHighlight);
@@ -38,6 +39,12 @@ module.exports = function(config) {
     return `<div class="example"><div class="preview">${content}</div><div class="markup">${pairedShortcode(content, lang)}</div></div>`
   });
 
+  // Post dates
+  config.addFilter('toISOString', dateString => new Date(dateString).toISOString());
+  config.addFilter("asPostDate", (dateObj) => {
+    return DateTime.fromJSDate(dateObj).toLocaleString(DateTime.DATE_MED);
+  });
+  
   return {
     markdownTemplateEngine: 'njk',
     dataTemplateEngine: 'njk',
