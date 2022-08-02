@@ -1,6 +1,11 @@
-{% extends "layouts/base.html" %} {% block content %}
+{% extends "layouts/base.html" %} {% set overviewItems = page.collection %} {%
+block content %}
 <article>
   <h1>{{ title }}</h1>
-  {{ content | safe }}
+  {{ content | safe }} {% for items in overViewItems %}
+  <div>
+    <h3>{{ item.data.title }}</h3>
+  </div>
+  {% endfor %}
 </article>
 {% endblock %}
