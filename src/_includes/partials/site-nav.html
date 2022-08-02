@@ -3,48 +3,28 @@
   <a href="/" aria-label="{{ site.name }} - home">
     {% include "partials/brand.svg" %} Home
   </a>
+
   <nav aria-label="primary">
     <ul>
       <li>
         <details>
+          <summary>Getting started</summary>
+          {% set navListItems = collections.gettingStarted %} {% include
+          "partials/site-nav-li.html" %}
+        </details>
+      </li>
+      <li>
+        <details>
           <summary>Ingredients</summary>
-          <ul>
-            {% for item in collections.ingredients %}
-            <li>
-              <a
-                href="{{ item.url }}"
-                {{
-                helpers.getLinkActiveState(item.url,
-                page.url)
-                |
-                safe
-                }}
-                >{{ item.data.title }}</a
-              >
-            </li>
-            {% endfor %}
-          </ul>
+          {% set navListItems = collections.ingredients %} {% include
+          "partials/site-nav-li.html" %}
         </details>
       </li>
       <li>
         <details>
           <summary>Recipes</summary>
-          <ul>
-            {% for item in collections.recipes %}
-            <li>
-              <a
-                href="{{ item.url }}"
-                {{
-                helpers.getLinkActiveState(item.url,
-                page.url)
-                |
-                safe
-                }}
-                >{{ item.data.title }}</a
-              >
-            </li>
-            {% endfor %}
-          </ul>
+          {% set navListItems = collections.recipes %} {% include
+          "partials/site-nav-li.html" %}
         </details>
       </li>
     </ul>
