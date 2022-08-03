@@ -1,0 +1,12 @@
+{% set pageTitle = title + ' - ' + site.name %}
+
+{# We don't want any duplication. This is likely for the home page. #}
+{% if site.name === metaTitle %} 
+  {% set pageTitle = metaTitle %}
+{% endif %}
+
+{% set siteTitle = site.name %}
+{% set currentUrl = site.url + page.url %}
+
+<title>{{ pageTitle }}</title>
+<link rel="canonical" href="{{ currentUrl }}" />

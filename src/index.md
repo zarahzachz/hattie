@@ -1,5 +1,6 @@
 ---
 title: "Introducing Hattie"
+metaTitle: "Hattie"
 layout: "layouts/home.html"
 eleventyExcludeFromCollections: true
 ---

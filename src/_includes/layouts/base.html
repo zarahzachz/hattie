@@ -7,12 +7,13 @@
 
     <link rel="stylesheet" href="/css/prism.css" />
 
-    <title>{{ title }}</title>
+    {% include "partials/meta-info.html" %}
   </head>
   <body>
     {% include "partials/site-nav.html" %}
     <main tabindex="-1" id="main-content">
       {% block content %}{% endblock %}
     </main>
+    {% include "partials/footer.html" %}
   </body>
 </html>
