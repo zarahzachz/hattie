@@ -1,0 +1,25 @@
+{% extends "layouts/base.html" %} 
+
+{% block content %}
+<article>
+  <h1>{{ title }}</h1>
+
+  <div>
+    {{ content | safe }} 
+  </div>
+
+  {% if collections[group].length > 0 %}
+  <hr>
+  <ol role="list">
+    {% for item in collections[group] %}
+    <li>
+      <article>
+        <h2><a href="{{ item.url }}">{{ item.data.title }}</a></h2>
+        <p>{{ item.data.about }}</p>        
+      </article>
+    </li>
+    {% endfor %}
+  </ol>
+  {% endif %}
+</article>
+{% endblock %}

@@ -1,0 +1,26 @@
+{
+  "name": "hattie",
+  "version": "0.1.0",
+  "description": "A [Tailwind](https://tailwindcss.com/) + [Eleventy](https://www.11ty.dev/) + [Alpine](https://alpinejs.dev/) experiment.",
+  "main": "index.js",
+  "scripts": {
+    "start": "npx @11ty/eleventy --serve",
+    "build": "npx @11ty/eleventy"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zarahzachz/hattie.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zarahzachz/hattie/issues"
+  },
+  "homepage": "https://github.com/zarahzachz/hattie#readme",
+  "devDependencies": {
+    "@11ty/eleventy": "^1.0.1",
+    "@11ty/eleventy-plugin-syntaxhighlight": "^4.1.0",
+    "luxon": "^3.0.1"
+  }
+}

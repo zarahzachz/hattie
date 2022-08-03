@@ -1,0 +1,19 @@
+{% extends "layouts/base.html" %} 
+
+{% block content %}
+<article>
+  <header>
+    <h1>{{ title }}</h1>
+    <p>{{ about }}</p>
+    <p>Last updated:&nbsp;
+      <time datetime="{{ page.date | toISOString }}">
+        {{ page.date | asPostDate }}
+      </time>
+    </p>
+  </header>
+
+  <div>
+    {{ content | safe }}
+  </div>
+</article>
+{% endblock %}

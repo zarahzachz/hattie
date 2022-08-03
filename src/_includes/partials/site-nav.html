@@ -1,0 +1,32 @@
+<a href="#main-content">Skip to content</a>
+<header role="banner" aria-label="global">
+  <a href="/" aria-label="{{ site.name }} - home">
+    {% include "partials/brand.svg" %} Home
+  </a>
+
+  <nav aria-label="primary">
+    <ul role="list">
+      <li>
+        <details>
+          <summary>Getting started</summary>
+          {% set navListItems = collections.gettingStarted %}
+          {% include "partials/site-nav-li.html" %}
+        </details>
+      </li>
+      <li>
+        <details>
+          <summary>Ingredients</summary>
+          {% set navListItems = collections.ingredients %}
+          {% include "partials/site-nav-li.html" %}
+        </details>
+      </li>
+      <li>
+        <details>
+          <summary>Recipes</summary>
+          {% set navListItems = collections.recipes %}
+          {% include "partials/site-nav-li.html" %}
+        </details>
+      </li>
+    </ul>
+  </nav>
+</header>
