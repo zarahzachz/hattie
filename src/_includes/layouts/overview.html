@@ -9,16 +9,17 @@
   </div>
 
   {% if collections[group].length > 0 %}
-    <hr>
-    <div>
+  <hr>
+  <ol role="list">
     {% for item in collections[group] %}
+    <li>
       <article>
-        <h3>{{ item.data.title }}</h3>
-        <p>{{ item.data.about }}</p>
-        <a href="{{ item.url }}">Learn more about {{ item.data.title }}</a>
+        <h2><a href="{{ item.url }}">{{ item.data.title }}</a></h2>
+        <p>{{ item.data.about }}</p>        
       </article>
+    </li>
     {% endfor %}
-    </div>
+  </ol>
   {% endif %}
 </article>
 {% endblock %}
