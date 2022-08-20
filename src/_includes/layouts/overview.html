@@ -1,8 +1,8 @@
 {% extends "layouts/base.html" %} 
 
 {% block content %}
-<article>
-  <h1 class="p-6 pb-3 text-4xl font-bold">{{ title }}</h1>
+<article class="md:p-12">
+  <h1 class="p-6 pb-3 mt-10 text-4xl font-bold">{{ title }}</h1>
 
   <div class="p-6 pt-3">
     {{ content | safe }} 
@@ -10,7 +10,7 @@
 
   {% if collections[group].length > 0 %}
   <hr class="mx-6 border-t-slate-200">
-  <ol role="list" class="grid gap-6">
+  <ol role="list" class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
     {% for item in collections[group] %}
     <li class="p-6">
       <article class="p-4 rounded-xl bg-white shadow">

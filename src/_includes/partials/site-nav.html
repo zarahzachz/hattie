@@ -1,13 +1,13 @@
 <a href="#main-content" class="sr-only">Skip to content</a>
-<header role="banner" aria-label="global" class="sticky top-0 mb-4">
-  <div class="[ relative z-10 ] [ flex gap-x-4 justify-between items-center isolate ] [ px-6 py-4 ] [ text-white ] [ bg-emerald-400 ] [ shadow shadow-slate-300 ]">
+<header role="banner" aria-label="global" class="sticky top-0 mb-4 md:mb-0 md:h-screen md:bg-slate-50">
+  <div class="[ relative z-10 ] [ flex gap-x-4 justify-between items-center isolate ] [ px-6 py-4 ] [ text-white md:text-emerald-500 ] [ bg-emerald-400 md:bg-slate-50 ] [ shadow shadow-slate-300 md:shadow-none ]">
     <a href="/" aria-label="{{ site.name }} - home">
       {% include "partials/brand.svg" %} Home
     </a>
-    <button aria-expanded="true" class="[ px-4 py-1 ] [ hover:text-emerald-500 active:text-emerald-700 ] [ hover:bg-emerald-100 active:bg-white ] [ rounded border border-solid border-white hover:border-emerald-100 ]">Menu</button>
+    <button aria-expanded="true" class="[ px-4 py-1 ] [ hover:text-emerald-500 active:text-emerald-700 ] [ hover:bg-emerald-100 active:bg-white ] [ rounded border border-solid border-white hover:border-emerald-100 ] md:hidden">Menu</button>
   </div>
 
-  <nav aria-label="primary" class="absolute inset-0 h-screen pt-16 bg-white" hidden>
+  <nav aria-label="primary" class="absolute inset-0 h-screen pt-16 bg-white md:bg-slate-50">
     <ul role="list" class="py-2">
       <li>
         <details>
