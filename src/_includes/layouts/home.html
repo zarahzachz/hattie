@@ -2,43 +2,45 @@
 
 {% block content %}
 <article>
-  <header>
-    <h1>{{ title }}</h1>
-    {{ content | safe }}
+  <header class="p-10 text-center">
+    <h1 class="text-4xl font-bold">{{ title }}</h1>
+    <div class="mt-4 text-xl text-slate-400 font-extralight">
+      {{ content | safe }}
+    </div>
   </header>
 
-  <section>
-    <article>
-      <h2>Getting started</h2>
-      <p>
+  <section class="flex flex-col gap-6 p-6 bg-emerald-50">
+    <article class="p-4 rounded-xl bg-white shadow">
+      <h2 class="font-bold text-lg">Getting started</h2>
+      <p class="mt-2">
         Lorem ipsum dolor sit, amet consectetur adipisicing elit. Praesentium
         dolores minus, tenetur doloremque sunt animi laudantium unde saepe
         deserunt itaque cumque vel voluptatibus, vero quo atque fugiat! Amet,
         dolores praesentium.
       </p>
-      <a href="/getting-started">View getting started guidance</a>
+      <a href="/getting-started" class="block mt-4 text-emerald-500 underline hover:text-emerald-700">View getting started guidance</a>
     </article>
 
-    <article>
-      <h2>Ingredients</h2>
-      <p>
+    <article class="p-4 rounded-xl bg-white shadow">
+      <h2 class="font-bold text-lg">Ingredients</h2>
+      <p class="mt-2">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem
         reiciendis cupiditate consectetur delectus aliquam necessitatibus esse,
         deserunt culpa quas temporibus eveniet molestias voluptates accusantium
         dicta rem. Eum, molestiae a. Quo?
       </p>
-      <a href="/ingredients">View ingredients</a>
+      <a href="/ingredients" class="block mt-4 text-emerald-500 underline hover:text-emerald-700">View ingredients</a>
     </article>
 
-    <article>
-      <h2>Recipes</h2>
-      <p>
+    <article class="p-4 rounded-xl bg-white shadow">
+      <h2 class="font-bold text-lg">Recipes</h2>
+      <p class="mt-2">
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo dolorum
         dolores veritatis sunt soluta vero omnis dolorem suscipit alias.
         Expedita repudiandae nostrum necessitatibus ad omnis esse quos suscipit
         nobis quisquam!
       </p>
-      <a href="/recipes">View recipes</a>
+      <a href="/recipes" class="block mt-4 text-emerald-500 underline hover:text-emerald-700">View recipes</a>
     </article>
   </section>
 </article>

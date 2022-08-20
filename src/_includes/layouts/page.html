@@ -1,19 +1,22 @@
 {% extends "layouts/base.html" %} 
 
 {% block content %}
-<article>
-  <header>
-    <h1>{{ title }}</h1>
-    <p>{{ about }}</p>
-    <p>Last updated:&nbsp;
+<article class="p-6">
+  <header class="mb-10">
+    <h1 class="text-4xl font-bold">{{ title }}</h1>
+    <p class="mt-6 text-xl font-extralight">{{ about }}</p>
+  </header>
+
+  <div class="my-6">
+    {{ content | safe }}
+  </div>
+
+  <footer>
+    <p class="text-sm text-slate-400 font-extralight">Last updated:&nbsp;
       <time datetime="{{ page.date | toISOString }}">
         {{ page.date | asPostDate }}
       </time>
     </p>
-  </header>
-
-  <div>
-    {{ content | safe }}
-  </div>
+  </footer>
 </article>
 {% endblock %}

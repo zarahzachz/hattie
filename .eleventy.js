@@ -42,7 +42,7 @@ module.exports = function(config) {
 
   // Add code preview/markup example using a shortcode
   config.addPairedShortcode('example', (content, lang = 'html') => {
-    return `<div class="example"><div class="preview">${content}</div><div class="markup">${pairedShortcode(content, lang)}</div></div>`
+    return `<div class="my-4 border border-solid border-slate-200 rounded"><div class="p-4 border-b border-b-solid border-b-slate-200">${content}</div><div class="">${pairedShortcode(content, lang)}</div></div>`
   });
 
   // Post dates
