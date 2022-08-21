@@ -5,9 +5,10 @@
   {% else %} 
     {% set title = item.data.title %} 
   {% endif %}
-  <li>
+  <li class="pl-12 pr-6 py-1 text-sm hover:bg-slate-100">
     <a href="{{ item.url }}"
       {{ helpers.getLinkActiveState(item.url, page.url) | safe }}
+      class="block"
     >
       {{ title }}
     </a>

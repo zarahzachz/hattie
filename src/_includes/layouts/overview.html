@@ -1,21 +1,21 @@
 {% extends "layouts/base.html" %} 
 
 {% block content %}
-<article>
-  <h1>{{ title }}</h1>
+<article class="md:p-12">
+  <h1 class="p-6 pb-3 mt-10 text-4xl font-bold">{{ title }}</h1>
 
-  <div>
+  <div class="p-6 pt-3">
     {{ content | safe }} 
   </div>
 
   {% if collections[group].length > 0 %}
-  <hr>
-  <ol role="list">
+  <hr class="mx-6 border-t-slate-200">
+  <ol role="list" class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
     {% for item in collections[group] %}
-    <li>
-      <article>
-        <h2><a href="{{ item.url }}">{{ item.data.title }}</a></h2>
-        <p>{{ item.data.about }}</p>        
+    <li class="p-6">
+      <article class="p-4 rounded-xl bg-white shadow">
+        <h2 class="font-bold text-lg"><a href="{{ item.url }}" class="text-emerald-500 underline hover:text-emerald-700">{{ item.data.title }}</a></h2>
+        <p class="mt-2">{{ item.data.about }}</p>        
       </article>
     </li>
     {% endfor %}
